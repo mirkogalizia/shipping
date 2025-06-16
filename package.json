@@ -1,5 +1,5 @@
 {
-  "name": "shipping-app-final",
+  "name": "shipping-app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -14,11 +14,9 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@types/node": "24.0.3",
-    "@types/react": "19.1.8",
+    "tailwindcss": "^3.3.2",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2",
     "typescript": "^5.2.2"
   }
 }
