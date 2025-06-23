@@ -13,7 +13,7 @@ interface Breakdown { bancali: number; baseCost: number; fuelSurcharge: number; 
 export default function Dashboard() {
   const [data, setData] = useState<Tariffa[]>([]);
   const [provinceList, setProvinceList] = useState<string[]>([]);
-  const [selectedProvince, setSelectedProvince] = useState<string>("");
+  const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
   const [query, setQuery] = useState<string>("");
   const [peso, setPeso] = useState<string>("");
   const [breakdown, setBreakdown] = useState<Breakdown | null>(null);
@@ -62,7 +62,9 @@ export default function Dashboard() {
       localStorage.setItem('tariffsData', JSON.stringify(tariffs));
       const provinces = Array.from(new Set(tariffs.map(t => t.Provincia))).sort();
       setProvinceList(provinces);
-      setSelectedProvince(''); setQuery(''); setBreakdown(null);
+      setSelectedProvince(null);
+      setQuery("");
+      setBreakdown(null);
     };
     reader.readAsBinaryString(file);
   }
@@ -70,7 +72,7 @@ export default function Dashboard() {
   function calcolaPrezzo() {
     const pesoKg = parseFloat(peso);
     if (!selectedProvince || pesoKg <= 0 || data.length === 0) { setBreakdown(null); return; }
-    const list = data.filter(d => d.Provincia === selectedProvince).sort((a,b) => a.Peso - b.Peso);
+    const list = data.filter(d => d.Provincia === selectedProvince).sort((a, b) => a.Peso - b.Peso);
     let rem = pesoKg, baseCost = 0, bancali = 0;
     while (rem > 0) {
       bancali++;
@@ -93,13 +95,13 @@ export default function Dashboard() {
 
         {provinceList.length > 0 && (
           <div className="space-y-4 mb-4">
-            <Combobox value={selectedProvince} onChange={setSelectedProvince}>
+            <Combobox value={selectedProvince} onChange={setSelectedProvince} nullable>
               <div className="relative">
                 <Combobox.Input
                   className="w-full border rounded p-2"
                   placeholder="Cerca Provincia..."
                   onChange={e => setQuery(e.target.value)}
-                  displayValue={(prov: string) => prov}
+                  displayValue={(prov: string | null) => prov || ''}
                 />
                 <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                   <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
