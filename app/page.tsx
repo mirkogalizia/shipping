@@ -35,32 +35,39 @@ export default function Dashboard() {
   // Caricamento dati Excel da localStorage
   useEffect(() => {
     const saved = localStorage.getItem('tariffsData');
-    if (saved) setData(JSON.parse(saved));
+    if (saved) {
+      try {
+        setData(JSON.parse(saved));
+      } catch {}
+    }
   }, []);
 
   // Mappa province 2-letter
-  const provinceMap: Record<string,string> = { MI: "MILANO", RM: "ROMA" /* ...aggiungi tutte... */};
+  const provinceMap: Record<string,string> = {
+    MI: "MILANO", RM: "ROMA", // ...aggiungi tutte le altre
+  };
 
   // Parsing Excel
   function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]; if (!file) return;
+    const file = e.target.files?.[0];
+    if (!file) return;
     const reader = new FileReader();
     reader.onload = (evt: any) => {
       const wb = XLSX.read(evt.target.result, { type: 'binary' });
       const ws = wb.Sheets[wb.SheetNames[0]];
-      const raw = XLSX.utils.sheet_to_json(ws, { header:1 }) as any[][];
-      const weightsRow = raw[3];
+      const raw = XLSX.utils.sheet_to_json(ws, { header: 1 }) as any[][];
+      const weightsRow = raw[3] || [];
       const rows = raw.slice(4).filter(r => r[1]);
       const tariffs: Tariffa[] = [];
       rows.forEach(r => {
         const prov = String(r[1]).trim();
         weightsRow.forEach((cell, idx) => {
           if (idx < 2) return;
-          const wtVal = parseFloat(String(cell).replace(/[^0-9.,]/g,'').replace(',','.'));
+          const wtVal = parseFloat(String(cell).replace(/[^0-9.,]/g, '').replace(',', '.'));
           if (isNaN(wtVal)) return;
           const wt = wtVal < 10 ? wtVal * 1000 : wtVal;
-          const price = parseFloat(String(r[idx]).replace(/[^0-9.,]/g,'').replace(',','.'));
-          if (!isNaN(price)) tariffs.push({ Provincia:prov, Peso:wt, Prezzo:price });
+          const price = parseFloat(String(r[idx]).replace(/[^0-9.,]/g, '').replace(',', '.'));
+          if (!isNaN(price)) tariffs.push({ Provincia: prov, Peso: wt, Prezzo: price });
         });
       });
       setData(tariffs);
@@ -73,12 +80,17 @@ export default function Dashboard() {
   // Calcolo spedizione
   function calcolaPrezzo() {
     const pesoKg = parseFloat(peso);
-    if (!provincia || pesoKg <= 0 || !data.length) { setBreakdown(null); return; }
+    if (!provincia || pesoKg <= 0 || data.length === 0) { setBreakdown(null); return; }
     const code = provincia.trim().toUpperCase();
     const fullProv = provinceMap[code] || provincia;
-    const list = data.filter(d=>d.Provincia.toLowerCase() === fullProv.toLowerCase()).sort((a,b)=>a.Peso-b.Peso);
+    const list = data.filter(d => d.Provincia.toLowerCase() === fullProv.toLowerCase()).sort((a, b) => a.Peso - b.Peso);
     let rem = pesoKg, baseCost = 0, bancali = 0;
-    while(rem > 0 && list.length) { bancali++; const e = list.find(d=>d.Peso >= rem) || list[list.length-1]; baseCost+=e.Prezzo; rem-=e.Peso; }
+    while (rem > 0 && list.length) {
+      bancali++;
+      const entry = list.find(d => d.Peso >= rem) || list[list.length - 1];
+      baseCost += entry.Prezzo;
+      rem -= entry.Peso;
+    }
     const fuel = baseCost * FUEL_SURCHARGE_RATE;
     const subtotal = baseCost + fuel;
     const iva = subtotal * VAT_RATE;
@@ -91,16 +103,16 @@ export default function Dashboard() {
       <section className="bg-white shadow-xl rounded-2xl p-6">
         <h2 className="text-2xl font-bold mb-4">Configurazione Shopify</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <input value={shopStore} onChange={e=>setShopStore(e.target.value)} placeholder="Store domain"
+          <input value={shopStore} onChange={e => setShopStore(e.target.value)} placeholder="Store domain"
             className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:outline-none" />
-          <input value={shopApiKey} onChange={e=>setShopApiKey(e.target.value)} placeholder="API Key"
+          <input value={shopApiKey} onChange={e => setShopApiKey(e.target.value)} placeholder="API Key"
             className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:outline-none" />
-          <input value={shopApiSecret} onChange={e=>setShopApiSecret(e.target.value)} placeholder="API Secret"
+          <input value={shopApiSecret} onChange={e => setShopApiSecret(e.target.value)} placeholder="API Secret"
             className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:outline-none" />
-          <input value={apiVersion} onChange={e=>setApiVersion(e.target.value)} placeholder="API Version"
+          <input value={apiVersion} onChange={e => setApiVersion(e.target.value)} placeholder="API Version"
             className="border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:outline-none" />
         </div>
-        <button onClick={()=>alert('Configurazione salvata')} className="mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full px-6 py-2 hover:opacity-90">
+        <button onClick={() => alert('Configurazione salvata')} className="mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full px-6 py-2 hover:opacity-90">
           Salva Configurazione
         </button>
       </section>
@@ -125,7 +137,7 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {data.map((row,i)=>(
+              {data.map((row, i) => (
                 <tr key={i} className={i % 2 ? 'bg-white' : 'bg-gray-50'}>
                   <td className="px-4 py-2">{row.Provincia}</td>
                   <td className="px-4 py-2">{row.Peso}</td>
@@ -142,10 +154,10 @@ export default function Dashboard() {
         <h2 className="text-2xl font-bold mb-4">Calcolo Spedizione</h2>
         <div className="flex flex-col md:flex-row gap-4 mb-6">
           <input placeholder="Codice Provincia"
-            value={provincia} onChange={e=>setProvincia(e.target.value)}
+            value={provincia} onChange={e => setProvincia(e.target.value)}
             className="border border-gray-300 rounded-lg p-3 flex-1 focus:ring-blue-500 focus:outline-none" />
           <input placeholder="Peso in kg" type="number"
-            value={peso} onChange={e=>setPeso(e.target.value)}
+            value={peso} onChange={e => setPeso(e.target.value)}
             className="border border-gray-300 rounded-lg p-3 w-32 focus:ring-blue-500 focus:outline-none" />
           <button onClick={calcolaPrezzo}
             className="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full px-6 py-3 hover:opacity-90">
