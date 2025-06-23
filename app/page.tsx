@@ -20,7 +20,6 @@ export default function Dashboard() {
   const VAT_RATE = 0.22;
   const FUEL_SURCHARGE_RATE = 0.025;
 
-  // Load saved tariffs
   useEffect(() => {
     const saved = localStorage.getItem('tariffsData');
     if (saved) {
@@ -165,7 +164,7 @@ export default function Dashboard() {
               <li><strong>IVA (22%):</strong> €{breakdown.iva.toFixed(2)}</li>
             </ul>
             <div className="mt-4 text-2xl font-extrabold text-indigo-700 text-right">
-              Totale: €{breakdown.total.toFixed(2)}
+              Totale:&nbsp;€{breakdown.total.toFixed(2)}
             </div>
           </div>
         )}
