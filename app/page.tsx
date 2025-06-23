@@ -5,7 +5,6 @@ import { useState, useEffect, Fragment } from "react";
 import * as XLSX from "xlsx";
 import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
-import './globals.css';
 
 interface Tariffa { Provincia: string; Peso: number; Prezzo: number; }
 interface Breakdown { bancali: number; baseCost: number; fuelSurcharge: number; iva: number; total: number; }
