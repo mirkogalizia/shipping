@@ -1,16 +1,10 @@
-// File: app/layout.tsx
 import './globals.css';
 
-export const metadata = {
-  title: 'Shopify Shipping Dashboard',
-  description: 'Calcolo spedizioni personalizzate per Shopify',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="it">
       <head />
-      <body className="bg-gray-50">
+      <body className="bg-indigo-50 font-sans">
         {children}
       </body>
     </html>
