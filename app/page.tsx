@@ -10,50 +10,46 @@ import './globals.css';
 interface Tariffa { Provincia: string; Peso: number; Prezzo: number; }
 interface Breakdown { bancali: number; baseCost: number; fuelSurcharge: number; iva: number; total: number; }
 
+enum Region {
+  NORD = "Nord",
+  CENTRO = "Centro",
+  SUD = "Sud",
+  ISOLE = "Isole"
+}
+
+// Mappa province a regioni
+const regionMap: Record<string, Region> = {
+  AO: Region.NORD, BI: Region.NORD, BL: Region.NORD, BS: Region.NORD, CO: Region.NORD,
+  CR: Region.NORD, CN: Region.NORD, GE: Region.NORD, GO: Region.NORD, LC: Region.NORD,
+  LO: Region.NORD, MI: Region.NORD, MB: Region.NORD, NO: Region.NORD, PV: Region.NORD,
+  VR: Region.NORD, VI: Region.NORD,
+
+  FI: Region.CENTRO, FR: Region.CENTRO, GR: Region.CENTRO, LI: Region.CENTRO,
+  LU: Region.CENTRO, LO: Region.CENTRO, PI: Region.CENTRO, PT: Region.CENTRO,
+  RM: Region.CENTRO, RI: Region.CENTRO, TE: Region.CENTRO, TR: Region.CENTRO,
+
+  BA: Region.SUD, BR: Region.SUD, BT: Region.SUD, CE: Region.SUD, CS: Region.SUD,
+  AV: Region.SUD, BN: Region.SUD, SA: Region.SUD, FG: Region.SUD, TA: Region.SUD,
+
+  CA: Region.ISOLE, CL: Region.ISOLE, CN: Region.ISOLE, OR: Region.ISOLE, SS: Region.ISOLE,
+};
+
 export default function Dashboard() {
-  // Stati principali
   const [data, setData] = useState<Tariffa[]>([]);
   const [provincia, setProvincia] = useState<string>("");
   const [peso, setPeso] = useState<string>("");
   const [breakdown, setBreakdown] = useState<Breakdown | null>(null);
-
+  
   const VAT_RATE = 0.22;
   const FUEL_SURCHARGE_RATE = 0.025;
 
-  // Carica tariffe salvate su localStorage al mount
   useEffect(() => {
     const saved = localStorage.getItem('tariffsData');
     if (saved) {
-      try { setData(JSON.parse(saved)); } catch { /* ignore */ }
+      try { setData(JSON.parse(saved)); } catch {}
     }
   }, []);
 
-  // Mappa province (completa) oppure userà nome raw
-  const provinceMap: Record<string,string> = {
-    AG: "AGRIGENTO", AL: "ALESSANDRIA", AN: "ANCONA", AO: "AOSTA", AR: "AREZZO",
-    AP: "ASCOLI PICENO", AT: "ASTI", AV: "AVELLINO", BA: "BARI", BG: "BERGAMO",
-    BI: "BIELLA", BL: "BELLUNO", BN: "BENEVENTO", BO: "BOLOGNA", BR: "BRINDISI",
-    BS: "BRESCIA", BT: "BARLETTA-ANDRIA-TRANI", CA: "CAGLIARI", CB: "CAMPOBASSO",
-    CE: "CASERTA", CH: "CHIETI", CL: "CALTANISSETTA", CN: "CUNEO", CO: "COMO",
-    CR: "CREMONA", CS: "COSENZA", CT: "CATANIA", CZ: "CATANZARO", EN: "ENNA",
-    FC: "FORLI'-CESENA", FE: "FERRARA", FG: "FOGGIA", FI: "FIRENZE", FR: "FROSINONE",
-    GE: "GENOVA", GO: "GORIZIA", GR: "GROSSETO", IM: "IMPERIA", IS: "ISERNIA",
-    KR: "CROTONE", LC: "LECCO", LE: "LECCE", LI: "LIVORNO", LO: "LODI",
-    LU: "LUCCA", MB: "MONZA BRIANZA", MC: "MACERATA", ME: "MESSINA", MI: "MILANO",
-    MN: "MANTOVA", MO: "MODENA", MS: "MASSA CARRARA", MT: "MATERA", NA: "NAPOLI",
-    NO: "NOVARA", NU: "NUORO", OR: "ORISTANO", PA: "PALERMO", PC: "PIACENZA",
-    PD: "PADOVA", PE: "PESCARA", PG: "PERUGIA", PI: "PISA", PN: "PORDENONE",
-    PR: "PARMA", PT: "PISTOIA", PU: "PESARO URBINO", PV: "PAVIA", PZ: "POTENZA",
-    RA: "RAVENNA", RC: "REGGIO CALABRIA", RE: "REGGIO EMILIA", RG: "RAGUSA",
-    RI: "RIETI", RM: "ROMA", RN: "RIMINI", RO: "ROVIGO", SA: "SALERNO",
-    SI: "SIENA", SO: "SONDRIO", SP: "SPEZIA", SR: "SIRACUSA", SS: "SASSARI",
-    SV: "SAVONA", TA: "TARANTO", TE: "TERAMO", TN: "TRENTO", TO: "TORINO",
-    TP: "TRAPANI", TR: "TERNI", TS: "TRIESTE", TV: "TREVISO", VA: "VARESE",
-    VB: "VERBANIA", VC: "VERCELLI", VE: "VENEZIA", VI: "VICENZA", VR: "VERONA",
-    VT: "VITERBO", VS: "SUD SARDEGNA"
-  };
-
-  // Upload e parsing del file Excel
   function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]; if (!file) return;
     const reader = new FileReader();
@@ -82,22 +78,17 @@ export default function Dashboard() {
     reader.readAsBinaryString(file);
   }
 
-  // Calcola spedizione in base a provincia e peso
   function calcolaPrezzo() {
     const pesoKg = parseFloat(peso);
-    if (!provincia || pesoKg <= 0 || data.length === 0) {
-      setBreakdown(null); return;
-    }
-    const code = provincia.trim().toUpperCase();
-    const fullProv = provinceMap[code] || provincia;
-    const list = data.filter(d => d.Provincia.toLowerCase() === fullProv.toLowerCase())
+    if (!provincia || pesoKg <= 0 || !data.length) { setBreakdown(null); return; }
+    const list = data.filter(d => d.Provincia.toLowerCase() === provincia.trim().toUpperCase())
                      .sort((a, b) => a.Peso - b.Peso);
     let rem = pesoKg, baseCost = 0, bancali = 0;
     while (rem > 0 && list.length) {
       bancali++;
-      const e = list.find(d => d.Peso >= rem) || list[list.length - 1];
-      baseCost += e.Prezzo;
-      rem -= e.Peso;
+      const entry = list.find(d => d.Peso >= rem) || list[list.length - 1];
+      baseCost += entry.Prezzo;
+      rem -= entry.Peso;
     }
     const fuel = baseCost * FUEL_SURCHARGE_RATE;
     const subtotal = baseCost + fuel;
@@ -105,54 +96,70 @@ export default function Dashboard() {
     setBreakdown({ bancali, baseCost, fuelSurcharge: fuel, iva, total: subtotal + iva });
   }
 
+  // Raggruppa per regione
+  const grouped: Record<Region, Tariffa[]> = {
+    [Region.NORD]: [], [Region.CENTRO]: [], [Region.SUD]: [], [Region.ISOLE]: []
+  };
+  data.forEach(t => {
+    const code = t.Provincia.split(' ')[0];
+    const reg = regionMap[code as string] || Region.CENTRO;
+    grouped[reg].push(t);
+  });
+
   return (
-    <div className="p-6 max-w-4xl mx-auto space-y-8 bg-gray-50 min-h-screen">
-      <h1 className="text-2xl font-bold">Calcolo Spedizione Personalizzata</h1>
-
-      {/* File Upload */}
-      <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload}
-        className="border rounded p-2 w-full" />
-
-      {/* Tabella Tariffe */}
-      {data.length > 0 && (
-        <table className="w-full table-auto border-collapse mt-4">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="border p-2">Provincia</th>
-              <th className="border p-2">Peso (kg)</th>
-              <th className="border p-2">Prezzo (€)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, i) => (
-              <tr key={i} className={i % 2 ? 'bg-white' : 'bg-gray-50'}>
-                <td className="border p-2">{row.Provincia}</td>
-                <td className="border p-2">{row.Peso}</td>
-                <td className="border p-2">€{row.Prezzo.toFixed(2)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-
-      {/* Input e Risultato */}
-      <div className="flex items-center space-x-4 mt-4">
-        <input placeholder="Provincia (es. MI)" value={provincia} onChange={e => setProvincia(e.target.value)}
-          className="border rounded p-2 w-32" />
-        <input placeholder="Peso kg" type="number" value={peso} onChange={e => setPeso(e.target.value)}
-          className="border rounded p-2 w-24" />
-        <button onClick={calcolaPrezzo} className="bg-black text-white px-4 py-2 rounded">Calcola</button>
-      </div>
-
-      {breakdown && (
-        <div className="mt-4 space-y-2">
-          <p><strong>Bancali:</strong> {breakdown.bancali}</p>
-          <p><strong>Costo base:</strong> €{breakdown.baseCost.toFixed(2)}</p>
-          <p><strong>Carburante (2.5%):</strong> €{breakdown.fuelSurcharge.toFixed(2)}</p>
-          <p><strong>IVA (22%):</strong> €{breakdown.iva.toFixed(2)}</p>
-          <p className="text-lg font-bold"><strong>Totale:</strong> €{breakdown.total.toFixed(2)}</p>
+    <div className="p-8 space-y-8">
+      <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 className="text-2xl font-bold mb-4">Dashboard Spedizioni</h1>
+        <input type="file" onChange={handleFileUpload} className="w-full border rounded p-2 mb-4" />
+        <div className="flex space-x-4">
+          <input value={provincia} onChange={e => setProvincia(e.target.value)} placeholder="Provincia (es. MI)"
+            className="border rounded p-2 flex-1" />
+          <input value={peso} onChange={e => setPeso(e.target.value)} placeholder="Peso kg" type="number"
+            className="border rounded p-2 w-24" />
+          <button onClick={calcolaPrezzo} className="bg-blue-600 text-white rounded p-2">Calcola</button>
         </div>
-      )}
+        {breakdown && (
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            <div className="bg-blue-50 p-4 rounded text-center">
+              <div className="text-sm text-gray-500">Bancali</div>
+              <div className="text-lg font-bold">{breakdown.bancali}</div>
+            </div>
+            <div className="bg-green-50 p-4 rounded text-center">
+              <div className="text-sm text-gray-500">Costo Base</div>
+              <div className="text-lg font-bold">€{breakdown.baseCost.toFixed(2)}</div>
+            </div>
+            <div className="bg-yellow-50 p-4 rounded text-center">
+              <div className="text-sm text-gray-500">Carburante</div>
+              <div className="text-lg font-bold">€{breakdown.fuelSurcharge.toFixed(2)}</div>
+            </div>
+            <div className="bg-purple-50 p-4 rounded text-center">
+              <div className="text-sm text-gray-500">IVA</div>
+              <div className="text-lg font-bold">€{breakdown.iva.toFixed(2)}</div>
+            </div>
+            <div className="bg-gray-100 p-4 rounded col-span-2 text-center">
+              <div className="text-sm text-gray-500">Totale</div>
+              <div className="text-2xl font-extrabold">€{breakdown.total.toFixed(2)}</div>
+            </div>
+          </div>
+        )}
+      </div>
+      {/* Blocco per regione */}
+      {Object.entries(grouped).map(([region, list]) => (
+        list.length > 0 && (
+          <section key={region} className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
+            <h2 className="text-xl font-semibold mb-4">{region}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {list.map((t, i) => (
+                <div key={i} className="border rounded p-4">
+                  <div className="font-bold">{t.Provincia}</div>
+                  <div>Peso: {t.Peso} kg</div>
+                  <div>Prezzo: €{t.Prezzo.toFixed(2)}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      ))}
     </div>
   );
 }
