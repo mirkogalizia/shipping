@@ -108,35 +108,34 @@ export default function Dashboard() {
                 </Combobox.Button>
 
                 <Transition
-                  as={Fragment}
-                  leave="transition ease-in duration-100"
-                  leaveFrom="opacity-100"
-                  leaveTo="opacity-0"
-                  className="absolute mt-1 w-full bg-white shadow-lg max-h-60 overflow-auto rounded-md z-10"
-                >
-                  <Combobox.Options>
-                    {filteredProvinces.length === 0 && query !== '' ? (
-                      <div className="p-2 text-gray-500">Nessuna provincia trovata.</div>
-                    ) : (
-                      filteredProvinces.map((p, idx) => (
-                        <Combobox.Option
-                          key={idx}
-                          value={p}
-                          className={({ active }) =>
-                            `cursor-pointer select-none p-2 ${active ? 'bg-blue-100' : ''}`
-                          }
-                        >
-                          {({ selected, active }) => (
-                            <div className="flex items-center">
-                              {selected && <CheckIcon className="h-5 w-5 text-blue-600 mr-2" />}
-                              <span className={`${selected ? 'font-semibold' : ''}`}>{p}</span>
-                            </div>
-                          )}
-                        </Combobox.Option>
-                      ))
-                    )}
-                  </Combobox.Options>
-                </Transition>
+  as={Fragment}
+  leave="transition ease-in duration-100"
+  leaveFrom="opacity-100"
+  leaveTo="opacity-0"
+>
+  <Combobox.Options className="absolute mt-1 w-full bg-white shadow-lg max-h-60 overflow-auto rounded-md z-10">
+    {filteredProvinces.length === 0 && query !== '' ? (
+      <div className="p-2 text-gray-500">Nessuna provincia trovata.</div>
+    ) : (
+      filteredProvinces.map((p, idx) => (
+        <Combobox.Option
+          key={idx}
+          value={p}
+          className={({ active }) =>
+            `cursor-pointer select-none p-2 ${active ? 'bg-blue-100' : ''}`
+          }
+        >
+          {({ selected, active }) => (
+            <div className="flex items-center">
+              {selected && <CheckIcon className="h-5 w-5 text-blue-600 mr-2" />}
+              <span className={`${selected ? 'font-semibold' : ''}`}>{p}</span>
+            </div>
+          )}
+        </Combobox.Option>
+      ))
+    )}
+  </Combobox.Options>
+</Transition>
               </div>
             </Combobox>
 
