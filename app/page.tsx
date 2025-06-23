@@ -31,7 +31,6 @@ export default function Dashboard() {
     }
   }, []);
 
-  // Filtered for combobox
   const filteredProvinces =
     query === ''
       ? provinceList
@@ -87,75 +86,87 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
-      <div className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">Calcolo Spedizioni</h1>
+    <div className="min-h-screen bg-indigo-50 flex flex-col items-center py-12 px-4">
+      <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+        <h1 className="text-3xl font-extrabold text-center text-indigo-600 mb-6">Calcolo Spedizioni</h1>
+        <label className="block mb-2 font-medium text-gray-700">Carica tariffe Excel</label>
         <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload}
-          className="w-full border rounded p-2 mb-4" />
+          className="w-full file:py-2 file:px-4 file:border file:border-gray-300 file:rounded file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 mb-6" />
 
         {provinceList.length > 0 && (
-          <div className="space-y-4 mb-4">
-            <Combobox value={selectedProvince} onChange={setSelectedProvince} nullable>
-              <div className="relative">
-                <Combobox.Input
-                  className="w-full border rounded p-2"
-                  placeholder="Cerca Provincia..."
-                  onChange={e => setQuery(e.target.value)}
-                  displayValue={(prov: string | null) => prov || ''}
-                />
-                <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                  <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                </Combobox.Button>
+          <>
+            <div className="mb-4">
+              <label className="block mb-1 font-medium text-gray-700">Provincia</label>
+              <Combobox value={selectedProvince} onChange={setSelectedProvince} nullable>
+                <div className="relative">
+                  <Combobox.Input
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                    placeholder="Cerca Provincia..."
+                    onChange={e => setQuery(e.target.value)}
+                    displayValue={(prov: string | null) => prov || ''}
+                  />
+                  <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                    <ChevronUpDownIcon className="h-6 w-6 text-gray-400" aria-hidden="true" />
+                  </Combobox.Button>
 
-                <Transition
-  as={Fragment}
-  leave="transition ease-in duration-100"
-  leaveFrom="opacity-100"
-  leaveTo="opacity-0"
->
-  <Combobox.Options className="absolute mt-1 w-full bg-white shadow-lg max-h-60 overflow-auto rounded-md z-10">
-    {filteredProvinces.length === 0 && query !== '' ? (
-      <div className="p-2 text-gray-500">Nessuna provincia trovata.</div>
-    ) : (
-      filteredProvinces.map((p, idx) => (
-        <Combobox.Option
-          key={idx}
-          value={p}
-          className={({ active }) =>
-            `cursor-pointer select-none p-2 ${active ? 'bg-blue-100' : ''}`
-          }
-        >
-          {({ selected, active }) => (
-            <div className="flex items-center">
-              {selected && <CheckIcon className="h-5 w-5 text-blue-600 mr-2" />}
-              <span className={`${selected ? 'font-semibold' : ''}`}>{p}</span>
+                  <Transition
+                    as={Fragment}
+                    leave="transition ease-in duration-100"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Combobox.Options className="absolute mt-1 w-full bg-white shadow-lg max-h-60 overflow-auto rounded-md z-10">
+                      {filteredProvinces.length === 0 && query !== '' ? (
+                        <div className="p-2 text-gray-500">Nessuna provincia trovata.</div>
+                      ) : (
+                        filteredProvinces.map((p, idx) => (
+                          <Combobox.Option
+                            key={idx}
+                            value={p}
+                            className={({ active }) =>
+                              `cursor-pointer select-none p-2 ${active ? 'bg-indigo-100' : ''}`
+                            }
+                          >
+                            {({ selected }) => (
+                              <div className="flex items-center">
+                                {selected && <CheckIcon className="h-5 w-5 text-indigo-600 mr-2" />}
+                                <span className={selected ? 'font-medium' : 'font-normal'}>{p}</span>
+                              </div>
+                            )}
+                          </Combobox.Option>
+                        ))
+                      )}
+                    </Combobox.Options>
+                  </Transition>
+                </div>
+              </Combobox>
             </div>
-          )}
-        </Combobox.Option>
-      ))
-    )}
-  </Combobox.Options>
-</Transition>
-              </div>
-            </Combobox>
 
-            <input value={peso} onChange={e => setPeso(e.target.value)} placeholder="Peso (kg)" type="number"
-              className="w-full border rounded p-2" />
+            <div className="mb-6">
+              <label className="block mb-1 font-medium text-gray-700">Peso (kg)</label>
+              <input value={peso} onChange={e => setPeso(e.target.value)} type="number"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            </div>
 
             <button onClick={calcolaPrezzo}
-              className="w-full bg-blue-600 text-white rounded p-2 hover:bg-blue-700">
-              Calcola
+              className="w-full bg-indigo-600 text-white font-semibold py-2 rounded-md hover:bg-indigo-700 transition">
+              Calcola Costo
             </button>
-          </div>
+          </>
         )}
 
         {breakdown && (
-          <div className="space-y-2 mt-4 p-4 bg-gray-50 rounded">
-            <div><strong>Bancali:</strong> {breakdown.bancali}</div>
-            <div><strong>Costo Base:</strong> €{breakdown.baseCost.toFixed(2)}</div>
-            <div><strong>Carburante (2.5%):</strong> €{breakdown.fuelSurcharge.toFixed(2)}</div>
-            <div><strong>IVA (22%):</strong> €{breakdown.iva.toFixed(2)}</div>
-            <div className="text-lg font-bold mt-2"><strong>Totale:</strong> €{breakdown.total.toFixed(2)}</div>
+          <div className="mt-6 bg-gray-50 p-4 rounded-md border border-gray-200">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Risultati</h2>
+            <ul className="space-y-1 text-gray-700">
+              <li><strong>Bancali:</strong> {breakdown.bancali}</li>
+              <li><strong>Base (€):</strong> €{breakdown.baseCost.toFixed(2)}</li>
+              <li><strong>Carburante (2.5%):</strong> €{breakdown.fuelSurcharge.toFixed(2)}</li>
+              <li><strong>IVA (22%):</strong> €{breakdown.iva.toFixed(2)}</li>
+            </ul>
+            <div className="mt-4 text-2xl font-extrabold text-indigo-700 text-right">
+              Totale: €{breakdown.total.toFixed(2)}
+            </div>
           </div>
         )}
       </div>
