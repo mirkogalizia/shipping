@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
 import * as xlsx from 'xlsx';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 export const dynamic = 'force-dynamic';
 
@@ -19,9 +21,22 @@ export async function POST(req) {
 
     const workbook = xlsx.read(buffer, { type: 'buffer' });
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
-    // Salva TUTTA la tabella come array di array (esattamente come l’Excel!)
     const raw = xlsx.utils.sheet_to_json(sheet, { header: 1 });
-    await writeFile('/tmp/tariffs.json', JSON.stringify(raw, null, 2));
+    const tariffsJson = JSON.stringify(raw, null, 2);
+
+    // Upload su Supabase Storage, bucket "shipping"
+    const { error } = await supabase.storage
+      .from("shipping")
+      .upload('tariffs.json', Buffer.from(tariffsJson), {
+        upsert: true,
+        contentType: 'application/json'
+      });
+
+    if (error) {
+      console.error("Supabase upload error:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
     return NextResponse.json({ ok: true, rows: raw.length });
   } catch (error) {
     console.error("Errore upload-tariffs:", error);

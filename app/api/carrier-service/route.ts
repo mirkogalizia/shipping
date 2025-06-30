@@ -1,13 +1,21 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import fs from 'fs';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_KEY!);
 
 export async function POST(req: NextRequest) {
   let tariffs: any[][];
   try {
-    const data = fs.readFileSync('/tmp/tariffs.json', 'utf8');
-    if (!data) throw new Error('Tariffe vuote!');
-    tariffs = JSON.parse(data);
+    // Scarica il file JSON da Supabase Storage, bucket "shipping"
+    const { data, error } = await supabase
+      .storage
+      .from("shipping")
+      .download('tariffs.json');
+    if (error || !data) throw new Error('Tariffe non disponibili su Supabase!');
+
+    const text = await data.text();
+    tariffs = JSON.parse(text);
   } catch (e) {
     return NextResponse.json({
       error: "Tariffe non disponibili. Devi prima caricare un file Excel.",
@@ -49,7 +57,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: `Nessuna tariffa trovata per provincia: ${provinciaRichiesta}` }, { status: 400 });
   }
 
-  // Logica bancali (stessa di prima, ma su array)
+  // Logica bancali
   let rem = pesoTotaleKg, baseCost = 0, bancali = 0;
   while (rem > 0) {
     bancali++;
@@ -74,3 +82,4 @@ export async function POST(req: NextRequest) {
   };
   return NextResponse.json({ rates: [shippingRate] });
 }
+
