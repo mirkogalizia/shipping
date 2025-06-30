@@ -3,48 +3,57 @@ import type { NextRequest } from 'next/server';
 import fs from 'fs';
 
 export async function POST(req: NextRequest) {
-  let tariffs;
+  let tariffs: any[][];
   try {
     const data = fs.readFileSync('/tmp/tariffs.json', 'utf8');
     if (!data) throw new Error('Tariffe vuote!');
     tariffs = JSON.parse(data);
   } catch (e) {
-    return NextResponse.json({ error: "Tariffe non disponibili. Devi prima caricare un file Excel.", details: e.message }, { status: 500 });
+    return NextResponse.json({
+      error: "Tariffe non disponibili. Devi prima caricare un file Excel.",
+      details: (e as Error).message
+    }, { status: 500 });
   }
 
-  // Estrai i dati dall’input Shopify
-  let rate;
-  try {
-    rate = typeof req.body === 'object' ? req.body : await req.json();
-  } catch {
-    rate = await req.json();
-  }
-  const provinceRequested = rate.shipping_address?.province || rate.rate?.shipping_address?.province;
-  const items = rate.line_items || rate.rate?.line_items || [];
+  // Trova le intestazioni delle colonne (prima riga)
+  const headers = tariffs[0];
+  const provinciaIdx = headers.findIndex((h: string) => h.toLowerCase().includes('prov'));
+  const pesoIdx = headers.findIndex((h: string) => h.toLowerCase().includes('peso'));
+  const prezzoIdx = headers.findIndex((h: string) => h.toLowerCase().includes('prezzo'));
 
-  // Filtra la lista per provincia (case-insensitive)
+  if (provinciaIdx === -1 || pesoIdx === -1 || prezzoIdx === -1) {
+    return NextResponse.json({
+      error: "Impossibile trovare le colonne Provincia, Peso, Prezzo nell'Excel.",
+      headers
+    }, { status: 400 });
+  }
+
+  // Prendi input dal body Shopify
+  const input = await req.json();
+  const provinciaRichiesta = input.rate?.shipping_address?.province || input.shipping_address?.province || "";
+  const items = input.rate?.line_items || input.line_items || [];
+  const pesoTotaleKg = items.reduce((tot: number, li: any) => tot + (li.grams || 0) * (li.quantity || 1), 0) / 1000;
+
+  // Filtra solo le tariffe della provincia giusta
   const list = tariffs
-    .filter(t => (t.Provincia || '').toLowerCase() === (provinceRequested || '').toLowerCase())
-    .sort((a, b) => a.Peso - b.Peso);
+    .slice(1)
+    .filter(row => String(row[provinciaIdx]).toLowerCase() === provinciaRichiesta.toLowerCase())
+    .sort((a, b) => Number(a[pesoIdx]) - Number(b[pesoIdx]));
 
-  if (list.length === 0) {
-    return NextResponse.json({ error: "Nessuna tariffa trovata per la provincia richiesta: " + provinceRequested }, { status: 400 });
+  if (!list.length) {
+    return NextResponse.json({ error: `Nessuna tariffa trovata per provincia: ${provinciaRichiesta}` }, { status: 400 });
   }
 
-  // Calcola il peso totale (in kg)
-  const totalKg = items.reduce((sum, li) => sum + (li.grams || 0) * (li.quantity || 1), 0) / 1000;
-
-  // Calcolo logica bancali
-  let rem = totalKg;
-  let baseCost = 0, bancali = 0;
+  // Logica bancali (stessa di prima, ma su array)
+  let rem = pesoTotaleKg, baseCost = 0, bancali = 0;
   while (rem > 0) {
     bancali++;
-    const entry = list.find(d => d.Peso >= rem) || list[list.length - 1];
-    if (!entry || typeof entry.Prezzo === 'undefined') {
+    const entry = list.find(d => Number(d[pesoIdx]) >= rem) || list[list.length - 1];
+    if (!entry) {
       return NextResponse.json({ error: "Nessuna tariffa valida trovata per il peso richiesto." }, { status: 400 });
     }
-    baseCost += entry.Prezzo;
-    rem -= entry.Peso;
+    baseCost += Number(entry[prezzoIdx]);
+    rem -= Number(entry[pesoIdx]);
   }
   const fuel = baseCost * 0.025;
   const subtotal = baseCost + fuel;
