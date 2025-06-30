@@ -7,26 +7,20 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   try {
-    const formData = await req.formData();
-    const file = formData.get('file');
-    if (!file) return NextResponse.json({ error: 'File mancante' }, { status: 400 });
+    const jsonData = await req.json();
 
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    // Carica il file Excel originale senza convertirlo in JSON
+    // Salva JSON direttamente nel bucket (deve essere già JSON pulito)
     const { error } = await supabase.storage
       .from(process.env.SUPABASE_BUCKET)
-      .upload('tariffs.xlsx', buffer, { upsert: true, contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      .upload('tariffs.json', new TextEncoder().encode(JSON.stringify(jsonData)), {
+        upsert: true,
+        contentType: 'application/json',
+      });
 
-    if (error) {
-      console.error("Errore upload su Supabase:", error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, rows: jsonData.length });
   } catch (error) {
-    console.error("Errore in upload-tariffs:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
