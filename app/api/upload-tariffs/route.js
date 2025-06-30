@@ -3,11 +3,8 @@ import { writeFile } from 'fs/promises';
 import { join } from 'path';
 import xlsx from 'xlsx';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// (Opzionale: puoi aggiungere questa riga per assicurare comportamento dinamico su Vercel)
+export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   try {
