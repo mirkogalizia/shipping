@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { writeFile } from 'fs/promises';
-import xlsx from 'xlsx';
+// IMPORT xlsx come namespace:
+import * as xlsx from 'xlsx';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,11 +17,12 @@ export async function POST(req) {
     }
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+
+    // ✅ Usa xlsx.read come namespace
     const workbook = xlsx.read(buffer, { type: 'buffer' });
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const data = xlsx.utils.sheet_to_json(sheet);
 
-    // Salva il file nella directory temporanea di Vercel
     await writeFile('/tmp/tariffs.json', JSON.stringify(data, null, 2));
     return NextResponse.json({ ok: true, rows: data.length });
   } catch (error) {
@@ -28,3 +30,4 @@ export async function POST(req) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
