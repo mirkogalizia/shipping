@@ -21,8 +21,8 @@ export default function UploadTariffs() {
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
       const raw = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-      // Trova la riga intestazioni
-      const headerRowIdx = raw.findIndex(row =>
+      // Trova la riga intestazioni con tipo corretto per 'row'
+      const headerRowIdx = raw.findIndex((row: any[]) =>
         row.some(cell => typeof cell === "string" && cell.toLowerCase().includes("prov")) &&
         row.some(cell => typeof cell === "string" && cell.toLowerCase().includes("peso")) &&
         row.some(cell => typeof cell === "string" && cell.toLowerCase().includes("prezzo"))
