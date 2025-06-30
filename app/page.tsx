@@ -21,8 +21,10 @@ export default function UploadTariffs() {
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
       const raw = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-      // Trova la riga intestazioni con tipo corretto per 'row'
-      const headerRowIdx = raw.findIndex((row: any[]) =>
+      const rawData = raw as any[][];
+
+      const headerRowIdx = rawData.findIndex((row) =>
+        Array.isArray(row) &&
         row.some(cell => typeof cell === "string" && cell.toLowerCase().includes("prov")) &&
         row.some(cell => typeof cell === "string" && cell.toLowerCase().includes("peso")) &&
         row.some(cell => typeof cell === "string" && cell.toLowerCase().includes("prezzo"))
@@ -33,12 +35,12 @@ export default function UploadTariffs() {
         return;
       }
 
-      const headerRow = raw[headerRowIdx];
+      const headerRow = rawData[headerRowIdx];
       const provinciaIdx = headerRow.findIndex(h => h.toLowerCase().includes("prov"));
       const pesoIdx = headerRow.findIndex(h => h.toLowerCase().includes("peso"));
       const prezzoIdx = headerRow.findIndex(h => h.toLowerCase().includes("prezzo"));
 
-      const dataRows = raw.slice(headerRowIdx + 1);
+      const dataRows = rawData.slice(headerRowIdx + 1);
 
       const jsonData = dataRows
         .map(row => ({
@@ -72,5 +74,6 @@ export default function UploadTariffs() {
     </div>
   );
 }
+
 
 
