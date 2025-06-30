@@ -11,21 +11,28 @@ export async function POST(req) {
     const formData = await req.formData();
     const file = formData.get('file');
     if (!file) return NextResponse.json({ error: 'File mancante' }, { status: 400 });
+
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
     const workbook = xlsx.read(buffer, { type: 'buffer' });
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const raw = xlsx.utils.sheet_to_json(sheet, { header: 1 });
-    const tariffsJson = JSON.stringify(raw);
+    const tariffsJson = JSON.stringify(raw, null, 2);
 
     const { error } = await supabase.storage
       .from(process.env.SUPABASE_BUCKET)
       .upload('tariffs.json', Buffer.from(tariffsJson), { upsert: true, contentType: 'application/json' });
 
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    if (error) {
+      console.error("Supabase upload error:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
     return NextResponse.json({ ok: true, rows: raw.length });
   } catch (error) {
+    console.error("Errore upload-tariffs:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
