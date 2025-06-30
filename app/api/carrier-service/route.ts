@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import fs from 'fs';
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   let tariffs;
   try {
     const data = fs.readFileSync('/tmp/tariffs.json', 'utf8');
