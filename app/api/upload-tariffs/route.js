@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import * as xlsx from 'xlsx';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
@@ -15,23 +14,19 @@ export async function POST(req) {
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
-    const workbook = xlsx.read(buffer, { type: 'buffer' });
-    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-    const raw = xlsx.utils.sheet_to_json(sheet, { header: 1 });
-    const tariffsJson = JSON.stringify(raw, null, 2);
-
+    // Carica il file Excel originale senza convertirlo in JSON
     const { error } = await supabase.storage
       .from(process.env.SUPABASE_BUCKET)
-      .upload('tariffs.json', Buffer.from(tariffsJson), { upsert: true, contentType: 'application/json' });
+      .upload('tariffs.xlsx', buffer, { upsert: true, contentType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
 
     if (error) {
-      console.error("Supabase upload error:", error);
+      console.error("Errore upload su Supabase:", error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    return NextResponse.json({ ok: true, rows: raw.length });
+    return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("Errore upload-tariffs:", error);
+    console.error("Errore in upload-tariffs:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
