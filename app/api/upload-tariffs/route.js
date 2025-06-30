@@ -3,18 +3,26 @@ import { writeFile } from 'fs/promises';
 import { join } from 'path';
 import xlsx from 'xlsx';
 
-// (Opzionale: puoi aggiungere questa riga per assicurare comportamento dinamico su Vercel)
 export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   try {
     const formData = await req.formData();
     const file = formData.get('file');
-    if (!file) return NextResponse.json({ error: 'File mancante' }, { status: 400 });
+    console.log("DEBUG file:", file);
+
+    if (!file) {
+      return NextResponse.json({ error: 'File mancante' }, { status: 400 });
+    }
+
+    if (typeof file.arrayBuffer !== 'function') {
+      return NextResponse.json({ error: 'Formato file non valido (no arrayBuffer)' }, { status: 400 });
+    }
 
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
     const workbook = xlsx.read(buffer, { type: 'buffer' });
+
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const data = xlsx.utils.sheet_to_json(sheet);
 
