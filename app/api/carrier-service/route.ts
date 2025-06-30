@@ -15,18 +15,23 @@ export async function POST(req: NextRequest) {
     }, { status: 500 });
   }
 
-  // Trova le intestazioni delle colonne (prima riga)
-  const headers = tariffs[0];
+  // CERCA la riga che contiene le intestazioni giuste
+  let headersRowIdx = tariffs.findIndex(
+    row => Array.isArray(row)
+      && row.some(cell => typeof cell === 'string' && cell.toLowerCase().includes('prov'))
+      && row.some(cell => typeof cell === 'string' && cell.toLowerCase().includes('peso'))
+      && row.some(cell => typeof cell === 'string' && cell.toLowerCase().includes('prezzo'))
+  );
+  if (headersRowIdx === -1) {
+    return NextResponse.json({
+      error: "Impossibile trovare le colonne Provincia, Peso, Prezzo nell'Excel.",
+      headers: tariffs[0]
+    }, { status: 400 });
+  }
+  const headers = tariffs[headersRowIdx];
   const provinciaIdx = headers.findIndex((h: string) => h.toLowerCase().includes('prov'));
   const pesoIdx = headers.findIndex((h: string) => h.toLowerCase().includes('peso'));
   const prezzoIdx = headers.findIndex((h: string) => h.toLowerCase().includes('prezzo'));
-
-  if (provinciaIdx === -1 || pesoIdx === -1 || prezzoIdx === -1) {
-    return NextResponse.json({
-      error: "Impossibile trovare le colonne Provincia, Peso, Prezzo nell'Excel.",
-      headers
-    }, { status: 400 });
-  }
 
   // Prendi input dal body Shopify
   const input = await req.json();
@@ -34,9 +39,9 @@ export async function POST(req: NextRequest) {
   const items = input.rate?.line_items || input.line_items || [];
   const pesoTotaleKg = items.reduce((tot: number, li: any) => tot + (li.grams || 0) * (li.quantity || 1), 0) / 1000;
 
-  // Filtra solo le tariffe della provincia giusta
+  // Filtra solo le tariffe della provincia giusta, partendo dalla prima riga dati DOPO le intestazioni
   const list = tariffs
-    .slice(1)
+    .slice(headersRowIdx + 1)
     .filter(row => String(row[provinciaIdx]).toLowerCase() === provinciaRichiesta.toLowerCase())
     .sort((a, b) => Number(a[pesoIdx]) - Number(b[pesoIdx]));
 
