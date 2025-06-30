@@ -7,11 +7,12 @@ const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_KE
 export async function POST(req: NextRequest) {
   let tariffs: any[][];
   try {
-    // Scarica il file JSON da Supabase Storage, bucket "shipping"
+    // Scarica il JSON come testo
     const { data, error } = await supabase
       .storage
-      .from("shipping")
+      .from(process.env.SUPABASE_BUCKET!)
       .download('tariffs.json');
+
     if (error || !data) throw new Error('Tariffe non disponibili su Supabase!');
 
     const text = await data.text();
