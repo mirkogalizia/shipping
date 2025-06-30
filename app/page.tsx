@@ -1,4 +1,3 @@
-// File: app/page.tsx
 "use client";
 
 import { useState, useEffect, Fragment } from "react";
@@ -62,6 +61,26 @@ export default function Dashboard() {
       setSelectedProvince(null);
       setQuery("");
       setBreakdown(null);
+
+      // --- Invio Excel al backend per aggiornare tariffs.json ---
+      const formData = new FormData();
+      formData.append("file", file); // invia il file Excel originale
+      fetch("/api/upload-tariffs", {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.ok) {
+            console.log("Tariffe caricate su backend:", data);
+          } else {
+            alert("Errore upload backend: " + (data.error || "unknown"));
+          }
+        })
+        .catch(err => {
+          alert("Errore invio tariffe a backend: " + err);
+        });
+      // --- fine invio backend ---
     };
     reader.readAsBinaryString(file);
   }
@@ -171,3 +190,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
