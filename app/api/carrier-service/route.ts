@@ -5,51 +5,75 @@ import path from "path";
 
 export async function POST(req: NextRequest) {
   try {
-    // Leggi il JSON statico da public/tariffs.json
+    // 1) Carica le tariffe da public/tariffs.json
     const jsonPath = path.join(process.cwd(), "public", "tariffs.json");
     const file = await fs.readFile(jsonPath, "utf8");
-    const tariffs: { Provincia: string; Peso: number; Prezzo: number }[] = JSON.parse(file);
+    const tariffs = JSON.parse(file) as {
+      Provincia: string;
+      Peso: number;
+      Prezzo: number;
+    }[];
 
-    // Prendi il flag debug dalla query string
+    // 2) Controlla se è richiesta modalità debug
     const url = new URL(req.url);
     const debug = url.searchParams.get("debug") === "1";
 
-    // Input Shopify
+    // 3) Leggi il payload Shopify e loggalo
     const { rate } = await req.json();
+    console.log("➤ carrier-service payload:", JSON.stringify(rate));
+
+    // 4) Estrai provincia e peso totale in kg
     const prov = rate.shipping_address?.province?.toString().toLowerCase() || "";
     const pesoTotaleKg =
       (rate.line_items || []).reduce(
         (sum: number, li: any) => sum + (li.grams || 0) * (li.quantity || 1),
         0
       ) / 1000;
+
     if (!prov || pesoTotaleKg <= 0) {
-      return NextResponse.json({ error: "Provincia o peso non validi" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Provincia o peso non validi" },
+        { status: 400 }
+      );
     }
 
-    // Filtra e ordina
+    // 5) Filtra tariffe per provincia e ordinale
     const list = tariffs
-      .filter(t => t.Provincia.toLowerCase() === prov)
+      .filter((t) => t.Provincia.toLowerCase() === prov)
       .sort((a, b) => a.Peso - b.Peso);
+
     if (list.length === 0) {
-      return NextResponse.json({ error: `Provincia "${prov}" non trovata.` }, { status: 400 });
+      return NextResponse.json(
+        { error: `Provincia "${prov}" non trovata.` },
+        { status: 400 }
+      );
     }
 
+    // 6) Imposta fasce e calcolo bancali
     const MAX_PER_PALLET = 1000;
-    const bracketWeights = list.map(t => t.Peso).filter(w => w <= MAX_PER_PALLET);
-    const bracketPrices  = list.filter(t => t.Peso <= MAX_PER_PALLET).map(t => t.Prezzo);
+    const bracketWeights = list
+      .map((t) => t.Peso)
+      .filter((w) => w <= MAX_PER_PALLET);
+    const bracketPrices = list
+      .filter((t) => t.Peso <= MAX_PER_PALLET)
+      .map((t) => t.Prezzo);
 
-    const bancali      = Math.ceil(pesoTotaleKg / MAX_PER_PALLET);
-    const firstWeight  = Math.min(pesoTotaleKg, MAX_PER_PALLET);
-    let   idx          = bracketWeights.findIndex(w => firstWeight <= w);
+    const bancali = Math.ceil(pesoTotaleKg / MAX_PER_PALLET);
+    const firstWeight = Math.min(pesoTotaleKg, MAX_PER_PALLET);
+
+    let idx = bracketWeights.findIndex((w) => firstWeight <= w);
     if (idx === -1) idx = bracketWeights.length - 1;
 
-    const pricePerPallet   = bracketPrices[idx];
-    const baseCost         = bancali * pricePerPallet;
-    const fuel             = baseCost * 0.025;
-    const subtotal         = baseCost + fuel;
-    const iva              = subtotal * 0.22;
-    const totalPriceCents  = Math.round((subtotal + iva) * 100);
+    const pricePerPallet = bracketPrices[idx];
+    const baseCost = bancali * pricePerPallet;
 
+    // 7) Supplemento carburante e IVA
+    const fuel = baseCost * 0.025;
+    const subtotal = baseCost + fuel;
+    const iva = subtotal * 0.22;
+    const totalPriceCents = Math.round((subtotal + iva) * 100);
+
+    // 8) Prepara la risposta
     const shippingRate = {
       service_name: "Spedizione Personalizzata",
       service_code: "CUSTOM",
@@ -58,7 +82,7 @@ export async function POST(req: NextRequest) {
       description: `Bancali: ${bancali}, fascia fino a ${bracketWeights[idx]}kg`,
     };
 
-    // Se debug, restituisci anche il breakdown
+    // 9) Se debug=1, includi il breakdown completo
     if (debug) {
       return NextResponse.json({
         rates: [shippingRate],
@@ -75,14 +99,15 @@ export async function POST(req: NextRequest) {
           fuel,
           subtotal,
           iva,
-          totalPriceCents
-        }
+          totalPriceCents,
+        },
       });
     }
 
-    // Altrimenti risposta normale
+    // 10) Risposta standard
     return NextResponse.json({ rates: [shippingRate] });
   } catch (e: any) {
+    console.error("➤ carrier-service error:", e);
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
