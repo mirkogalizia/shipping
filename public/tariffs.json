@@ -1,0 +1,3782 @@
+[
+  {
+    "Provincia": "AQUILA",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "AQUILA",
+    "Peso": 300,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "AQUILA",
+    "Peso": 550,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "AQUILA",
+    "Peso": 650,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "AQUILA",
+    "Peso": 800,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "AQUILA",
+    "Peso": 1000,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "AQUILA",
+    "Peso": 1200,
+    "Prezzo": 99
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 150,
+    "Prezzo": 41
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 550,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 650,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 800,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 1000,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "CHIETI",
+    "Peso": 1200,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 150,
+    "Prezzo": 41
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 550,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 650,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 800,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 1000,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "PESCARA",
+    "Peso": 1200,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 150,
+    "Prezzo": 40
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 550,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 650,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 800,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 1000,
+    "Prezzo": 84
+  },
+  {
+    "Provincia": "TERAMO",
+    "Peso": 1200,
+    "Prezzo": 88
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 150,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 300,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 550,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 650,
+    "Prezzo": 92
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 800,
+    "Prezzo": 108
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 1000,
+    "Prezzo": 113
+  },
+  {
+    "Provincia": "MATERA",
+    "Peso": 1200,
+    "Prezzo": 119
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 150,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 300,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 550,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 650,
+    "Prezzo": 94
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 800,
+    "Prezzo": 106
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 1000,
+    "Prezzo": 116
+  },
+  {
+    "Provincia": "POTENZA",
+    "Peso": 1200,
+    "Prezzo": 122
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 150,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 300,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 550,
+    "Prezzo": 88
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 650,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 800,
+    "Prezzo": 120
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 1000,
+    "Prezzo": 124
+  },
+  {
+    "Provincia": "CATANZARO",
+    "Peso": 1200,
+    "Prezzo": 130
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 150,
+    "Prezzo": 48
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 300,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 550,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 650,
+    "Prezzo": 101
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 800,
+    "Prezzo": 119
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 1000,
+    "Prezzo": 124
+  },
+  {
+    "Provincia": "COSENZA",
+    "Peso": 1200,
+    "Prezzo": 130
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 150,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 300,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 550,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 650,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 800,
+    "Prezzo": 120
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 1000,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "CROTONE",
+    "Peso": 1200,
+    "Prezzo": 129
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 150,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 300,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 550,
+    "Prezzo": 92
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 650,
+    "Prezzo": 110
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 800,
+    "Prezzo": 127
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 1000,
+    "Prezzo": 133
+  },
+  {
+    "Provincia": "REGGIO CALABRIA",
+    "Peso": 1200,
+    "Prezzo": 139
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 150,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 300,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 550,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 650,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 800,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 1000,
+    "Prezzo": 127
+  },
+  {
+    "Provincia": "VIBO VALENTIA",
+    "Peso": 1200,
+    "Prezzo": 133
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 300,
+    "Prezzo": 55
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 550,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 650,
+    "Prezzo": 88
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 800,
+    "Prezzo": 99
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 1000,
+    "Prezzo": 107
+  },
+  {
+    "Provincia": "AVELLINO",
+    "Peso": 1200,
+    "Prezzo": 112
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 300,
+    "Prezzo": 54
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 550,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 650,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 800,
+    "Prezzo": 98
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 1000,
+    "Prezzo": 103
+  },
+  {
+    "Provincia": "BENEVENTO",
+    "Peso": 1200,
+    "Prezzo": 108
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 300,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 550,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 650,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 800,
+    "Prezzo": 93
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 1000,
+    "Prezzo": 98
+  },
+  {
+    "Provincia": "CASERTA",
+    "Peso": 1200,
+    "Prezzo": 103
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 300,
+    "Prezzo": 53
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 550,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 650,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 800,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 1000,
+    "Prezzo": 101
+  },
+  {
+    "Provincia": "NAPOLI",
+    "Peso": 1200,
+    "Prezzo": 106
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 300,
+    "Prezzo": 54
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 550,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 650,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 800,
+    "Prezzo": 99
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 1000,
+    "Prezzo": 105
+  },
+  {
+    "Provincia": "SALERNO",
+    "Peso": 1200,
+    "Prezzo": 111
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 150,
+    "Prezzo": 36
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 300,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 550,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 650,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 800,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 1000,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "BOLOGNA",
+    "Peso": 1200,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 150,
+    "Prezzo": 36
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 300,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 550,
+    "Prezzo": 54
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 650,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 800,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 1000,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "FERRARA",
+    "Peso": 1200,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 150,
+    "Prezzo": 36
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 550,
+    "Prezzo": 55
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 650,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 800,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 1000,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "FORLI'-CESENA",
+    "Peso": 1200,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 150,
+    "Prezzo": 36
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 550,
+    "Prezzo": 54
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 650,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 800,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 1000,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "MODENA",
+    "Peso": 1200,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 1000,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "PARMA",
+    "Peso": 1200,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 800,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 1000,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "PIACENZA",
+    "Peso": 1200,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 550,
+    "Prezzo": 55
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 650,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 800,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 1000,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "RAVENNA",
+    "Peso": 1200,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 550,
+    "Prezzo": 55
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 650,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 800,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 1000,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "REGGIO EMILIA",
+    "Peso": 1200,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 1000,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "RIMINI",
+    "Peso": 1200,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 550,
+    "Prezzo": 59
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 650,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 800,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 1000,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "SAN MARINO",
+    "Peso": 1200,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 650,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 800,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 1000,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "GORIZIA",
+    "Peso": 1200,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 550,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 1000,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "PORDENONE",
+    "Peso": 1200,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 300,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 550,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 650,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 800,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 1000,
+    "Prezzo": 84
+  },
+  {
+    "Provincia": "TRIESTE",
+    "Peso": 1200,
+    "Prezzo": 88
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 800,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 1000,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "UDINE",
+    "Peso": 1200,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 300,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 550,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 650,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 800,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 1000,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "FROSINONE",
+    "Peso": 1200,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 300,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 550,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 650,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 800,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 1000,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "LATINA",
+    "Peso": 1200,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 150,
+    "Prezzo": 41
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 300,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 550,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 650,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 800,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 1000,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "RIETI",
+    "Peso": 1200,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 550,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 650,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 800,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 1000,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "ROMA",
+    "Peso": 1200,
+    "Prezzo": 91
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 150,
+    "Prezzo": 41
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 300,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 550,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 650,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 800,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 1000,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "VITERBO",
+    "Peso": 1200,
+    "Prezzo": 93
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 300,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 550,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 650,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 800,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 1000,
+    "Prezzo": 92
+  },
+  {
+    "Provincia": "GENOVA",
+    "Peso": 1200,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 300,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 550,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 650,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 800,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 1000,
+    "Prezzo": 93
+  },
+  {
+    "Provincia": "IMPERIA",
+    "Peso": 1200,
+    "Prezzo": 97
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 300,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 550,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 650,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 800,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 1000,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "SAVONA",
+    "Peso": 1200,
+    "Prezzo": 94
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 150,
+    "Prezzo": 41
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 300,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 550,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 650,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 800,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 1000,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "SPEZIA",
+    "Peso": 1200,
+    "Prezzo": 92
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 800,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 1000,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "BERGAMO",
+    "Peso": 1200,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 1000,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "BRESCIA",
+    "Peso": 1200,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 550,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 650,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 800,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 1000,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "COMO",
+    "Peso": 1200,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 800,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 1000,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "CREMONA",
+    "Peso": 1200,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 550,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 650,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 800,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 1000,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "LECCO",
+    "Peso": 1200,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 800,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 1000,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "LODI",
+    "Peso": 1200,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 800,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 1000,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "MANTOVA",
+    "Peso": 1200,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 550,
+    "Prezzo": 59
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 650,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 800,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 1000,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "MILANO",
+    "Peso": 1200,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 550,
+    "Prezzo": 59
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 650,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 800,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 1000,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "MONZA BRIANZA",
+    "Peso": 1200,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 800,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 1000,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "PAVIA",
+    "Peso": 1200,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 300,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 550,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 650,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 800,
+    "Prezzo": 91
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 1000,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "SONDRIO",
+    "Peso": 1200,
+    "Prezzo": 100
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 550,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 650,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 800,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 1000,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "VARESE",
+    "Peso": 1200,
+    "Prezzo": 84.2
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 550,
+    "Prezzo": 59
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 650,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 1000,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "ANCONA",
+    "Peso": 1200,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 300,
+    "Prezzo": 48
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 550,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 650,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 800,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 1000,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "ASCOLI PICENO",
+    "Peso": 1200,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 1000,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "FERMO",
+    "Peso": 1200,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 1000,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "MACERATA",
+    "Peso": 1200,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 800,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 1000,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "PESARO URBINO",
+    "Peso": 1200,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 150,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 300,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 550,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 650,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 800,
+    "Prezzo": 99
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 1000,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "CAMPOBASSO",
+    "Peso": 1200,
+    "Prezzo": 110
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 150,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 300,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 550,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 650,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 800,
+    "Prezzo": 101
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 1000,
+    "Prezzo": 105
+  },
+  {
+    "Provincia": "ISERNIA",
+    "Peso": 1200,
+    "Prezzo": 111
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 800,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 1000,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "ALESSANDRIA",
+    "Peso": 1200,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 1000,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "ASTI",
+    "Peso": 1200,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 150,
+    "Prezzo": 40
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 550,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 650,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 800,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 1000,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "BIELLA",
+    "Peso": 1200,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 150,
+    "Prezzo": 41
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 300,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 550,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 650,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 800,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 1000,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "CUNEO",
+    "Peso": 1200,
+    "Prezzo": 94
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 550,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 650,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 1000,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "NOVARA",
+    "Peso": 1200,
+    "Prezzo": 84
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 300,
+    "Prezzo": 48
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 550,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 650,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 800,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 1000,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "TORINO",
+    "Peso": 1200,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 150,
+    "Prezzo": 40
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 550,
+    "Prezzo": 66
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 650,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 800,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 1000,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "VERBANIA",
+    "Peso": 1200,
+    "Prezzo": 91
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 550,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 650,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 800,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 1000,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "VERCELLI",
+    "Peso": 1200,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 300,
+    "Prezzo": 55
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 550,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 650,
+    "Prezzo": 88
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 800,
+    "Prezzo": 98
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 1000,
+    "Prezzo": 106
+  },
+  {
+    "Provincia": "BARI",
+    "Peso": 1200,
+    "Prezzo": 112
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 150,
+    "Prezzo": 43
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 300,
+    "Prezzo": 55
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 550,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 650,
+    "Prezzo": 88
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 800,
+    "Prezzo": 98
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 1000,
+    "Prezzo": 106
+  },
+  {
+    "Provincia": "BARLETTA-ANDRIA-TRANI",
+    "Peso": 1200,
+    "Prezzo": 112
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 150,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 300,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 550,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 650,
+    "Prezzo": 92
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 800,
+    "Prezzo": 106
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 1000,
+    "Prezzo": 111
+  },
+  {
+    "Provincia": "BRINDISI",
+    "Peso": 1200,
+    "Prezzo": 117
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 150,
+    "Prezzo": 42
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 300,
+    "Prezzo": 53
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 550,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 650,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 800,
+    "Prezzo": 98
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 1000,
+    "Prezzo": 102
+  },
+  {
+    "Provincia": "FOGGIA",
+    "Peso": 1200,
+    "Prezzo": 107
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 150,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 300,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 550,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 650,
+    "Prezzo": 93
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 800,
+    "Prezzo": 107
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 1000,
+    "Prezzo": 113
+  },
+  {
+    "Provincia": "LECCE",
+    "Peso": 1200,
+    "Prezzo": 119
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 150,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 300,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 550,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 650,
+    "Prezzo": 92
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 800,
+    "Prezzo": 107
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 1000,
+    "Prezzo": 112
+  },
+  {
+    "Provincia": "TARANTO",
+    "Peso": 1200,
+    "Prezzo": 117
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 300,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 550,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 650,
+    "Prezzo": 116
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 800,
+    "Prezzo": 135
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 1000,
+    "Prezzo": 140
+  },
+  {
+    "Provincia": "CAGLIARI",
+    "Peso": 1200,
+    "Prezzo": 146
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 300,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 550,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 650,
+    "Prezzo": 116
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 800,
+    "Prezzo": 135
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 1000,
+    "Prezzo": 140
+  },
+  {
+    "Provincia": "NUORO",
+    "Peso": 1200,
+    "Prezzo": 146
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 300,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 550,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 650,
+    "Prezzo": 116
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 800,
+    "Prezzo": 135
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 1000,
+    "Prezzo": 140
+  },
+  {
+    "Provincia": "ORISTANO",
+    "Peso": 1200,
+    "Prezzo": 146
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 300,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 550,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 650,
+    "Prezzo": 116
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 800,
+    "Prezzo": 135
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 1000,
+    "Prezzo": 140
+  },
+  {
+    "Provincia": "SASSARI",
+    "Peso": 1200,
+    "Prezzo": 146
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 300,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 550,
+    "Prezzo": 96
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 650,
+    "Prezzo": 116
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 800,
+    "Prezzo": 135
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 1000,
+    "Prezzo": 141
+  },
+  {
+    "Provincia": "SUD SARDEGNA",
+    "Peso": 1200,
+    "Prezzo": 147
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 150,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 300,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 550,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 650,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 800,
+    "Prezzo": 142
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 1000,
+    "Prezzo": 150
+  },
+  {
+    "Provincia": "AGRIGENTO",
+    "Peso": 1200,
+    "Prezzo": 157
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 150,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 300,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 550,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 650,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 800,
+    "Prezzo": 142
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 1000,
+    "Prezzo": 150
+  },
+  {
+    "Provincia": "CALTANISSETTA",
+    "Peso": 1200,
+    "Prezzo": 157
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 300,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 550,
+    "Prezzo": 99
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 650,
+    "Prezzo": 120
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 800,
+    "Prezzo": 138
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 1000,
+    "Prezzo": 144
+  },
+  {
+    "Provincia": "CATANIA",
+    "Peso": 1200,
+    "Prezzo": 151
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 150,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 300,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 550,
+    "Prezzo": 105
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 650,
+    "Prezzo": 124
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 800,
+    "Prezzo": 143
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 1000,
+    "Prezzo": 151
+  },
+  {
+    "Provincia": "ENNA",
+    "Peso": 1200,
+    "Prezzo": 159
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 150,
+    "Prezzo": 50
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 300,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 550,
+    "Prezzo": 98
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 650,
+    "Prezzo": 120
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 800,
+    "Prezzo": 133
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 1000,
+    "Prezzo": 139
+  },
+  {
+    "Provincia": "MESSINA",
+    "Peso": 1200,
+    "Prezzo": 146
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 150,
+    "Prezzo": 51
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 300,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 550,
+    "Prezzo": 100
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 650,
+    "Prezzo": 120
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 800,
+    "Prezzo": 138
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 1000,
+    "Prezzo": 147
+  },
+  {
+    "Provincia": "PALERMO",
+    "Peso": 1200,
+    "Prezzo": 154
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 150,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 300,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 550,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 650,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 800,
+    "Prezzo": 142
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 1000,
+    "Prezzo": 150
+  },
+  {
+    "Provincia": "RAGUSA",
+    "Peso": 1200,
+    "Prezzo": 158
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 150,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 300,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 550,
+    "Prezzo": 101
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 650,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 800,
+    "Prezzo": 139
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 1000,
+    "Prezzo": 145
+  },
+  {
+    "Provincia": "SIRACUSA",
+    "Peso": 1200,
+    "Prezzo": 152
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 150,
+    "Prezzo": 52
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 300,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 550,
+    "Prezzo": 104
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 650,
+    "Prezzo": 123
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 800,
+    "Prezzo": 142
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 1000,
+    "Prezzo": 150
+  },
+  {
+    "Provincia": "TRAPANI",
+    "Peso": 1200,
+    "Prezzo": 157
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 650,
+    "Prezzo": 67
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 1000,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "AREZZO",
+    "Peso": 1200,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 800,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 1000,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "FIRENZE",
+    "Peso": 1200,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 150,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 300,
+    "Prezzo": 53
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 550,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 650,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 800,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 1000,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "GROSSETO",
+    "Peso": 1200,
+    "Prezzo": 100
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 550,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 1000,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "LIVORNO",
+    "Peso": 1200,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 800,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 1000,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "LUCCA",
+    "Peso": 1200,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 550,
+    "Prezzo": 60
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 650,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 800,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 1000,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "MASSA CARRARA",
+    "Peso": 1200,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 550,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 1000,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "PISA",
+    "Peso": 1200,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 1000,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "PISTOIA",
+    "Peso": 1200,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 1000,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "PRATO",
+    "Peso": 1200,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 300,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 550,
+    "Prezzo": 58
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 1000,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "SIENA",
+    "Peso": 1200,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 550,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 650,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 800,
+    "Prezzo": 79
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 1000,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "BOLZANO",
+    "Peso": 1200,
+    "Prezzo": 89
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 550,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 650,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 800,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 1000,
+    "Prezzo": 82
+  },
+  {
+    "Provincia": "TRENTO",
+    "Peso": 1200,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 550,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 650,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 800,
+    "Prezzo": 77
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 1000,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "PERUGIA",
+    "Peso": 1200,
+    "Prezzo": 85
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 150,
+    "Prezzo": 40
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 300,
+    "Prezzo": 49
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 550,
+    "Prezzo": 61
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 650,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 800,
+    "Prezzo": 81
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 1000,
+    "Prezzo": 86
+  },
+  {
+    "Provincia": "TERNI",
+    "Peso": 1200,
+    "Prezzo": 90
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 150,
+    "Prezzo": 46
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 300,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 550,
+    "Prezzo": 80
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 650,
+    "Prezzo": 95
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 800,
+    "Prezzo": 106
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 1000,
+    "Prezzo": 112
+  },
+  {
+    "Provincia": "AOSTA",
+    "Peso": 1200,
+    "Prezzo": 117
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 150,
+    "Prezzo": 39
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 300,
+    "Prezzo": 47
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 550,
+    "Prezzo": 62
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 650,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 800,
+    "Prezzo": 78
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 1000,
+    "Prezzo": 83
+  },
+  {
+    "Provincia": "BELLUNO",
+    "Peso": 1200,
+    "Prezzo": 87
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 1000,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "PADOVA",
+    "Peso": 1200,
+    "Prezzo": 74
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 1000,
+    "Prezzo": 70
+  },
+  {
+    "Provincia": "ROVIGO",
+    "Peso": 1200,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 150,
+    "Prezzo": 38
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 550,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 650,
+    "Prezzo": 65
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 800,
+    "Prezzo": 69
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 1000,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "TREVISO",
+    "Peso": 1200,
+    "Prezzo": 75
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 550,
+    "Prezzo": 56
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 1000,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "VENEZIA",
+    "Peso": 1200,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 300,
+    "Prezzo": 44
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 550,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 650,
+    "Prezzo": 63
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 800,
+    "Prezzo": 68
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 1000,
+    "Prezzo": 72
+  },
+  {
+    "Provincia": "VERONA",
+    "Peso": 1200,
+    "Prezzo": 76
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 150,
+    "Prezzo": 37
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 300,
+    "Prezzo": 45
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 550,
+    "Prezzo": 57
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 650,
+    "Prezzo": 64
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 800,
+    "Prezzo": 71
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 1000,
+    "Prezzo": 73
+  },
+  {
+    "Provincia": "VICENZA",
+    "Peso": 1200,
+    "Prezzo": 77
+  }
+]
