@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     const file = await fs.readFile(jsonPath, "utf8");
     const tariffs = JSON.parse(file) as Tariff[];
 
-    // Check debug
+    // Debug?
     const url = new URL(req.url);
     const debug = url.searchParams.get("debug") === "1";
 
@@ -52,13 +52,13 @@ export async function POST(req: NextRequest) {
     const { rate } = await req.json();
     console.log("➤ carrier-service payload:", JSON.stringify(rate));
 
-    // Provincia
+    // Determina provincia
     const rawProv = (rate.destination?.province || "").toString().trim();
     if (!rawProv) return NextResponse.json({ error: "Provincia non valida" }, { status: 400 });
     const key = rawProv.toUpperCase();
     const prov = provinceMap[key] || rawProv.toUpperCase();
 
-    // Peso totale in kg
+    // Calcola peso totale in kg
     const items = (rate.line_items || rate.items || []) as any[];
     const pesoTotaleKg =
       items
@@ -66,46 +66,45 @@ export async function POST(req: NextRequest) {
         .reduce((sum, i) => sum + Number(i.grams) * (i.quantity || 1), 0) / 1000;
     if (pesoTotaleKg <= 0) return NextResponse.json({ error: "Peso non valido" }, { status: 400 });
 
-    // Filtra per provincia
+    // Filtra tariffe per provincia
     const list = tariffs.filter(t => t.Provincia.toUpperCase() === prov).sort((a, b) => a.Peso - b.Peso);
     if (!list.length) {
       return NextResponse.json({ error: `Provincia "${rawProv}" (${prov}) non trovata.` }, { status: 400 });
     }
 
-    // Calcolo bancali e dettagli
+    // Suddivide in bancali
     const bracketWeights = list.map(t => t.Peso).filter(w => w <= MAX_PER_PALLET);
     const bracketPrices = list.filter(t => t.Peso <= MAX_PER_PALLET).map(t => t.Prezzo);
 
     let rem = pesoTotaleKg;
     let bancali = 0;
     let baseCost = 0;
-    const breakdown: { weight: number; price: number }[] = [];
+    const breakdownWeights: number[] = [];
 
     while (rem > 0) {
       bancali++;
       const palletWeight = Math.min(rem, MAX_PER_PALLET);
       let idx = bracketWeights.findIndex(w => palletWeight <= w);
       if (idx === -1) idx = bracketWeights.length - 1;
-      const price = bracketPrices[idx];
-      breakdown.push({ weight: palletWeight, price });
-      baseCost += price;
+      breakdownWeights.push(bracketWeights[idx]);
+      baseCost += bracketPrices[idx];
       rem -= palletWeight;
     }
 
-    // Supplemento carburante + pickup + IVA
+    // Calcola supplementi e IVA
     const fuel = baseCost * FUEL_SURCHARGE_RATE;
     const subtotalExclVat = baseCost + fuel + PICKUP_FEE;
     const iva = subtotalExclVat * VAT_RATE;
     const totalPriceCents = Math.round((subtotalExclVat + iva) * 100);
 
-    // Costruisci description dettagliata
-    const details = breakdown
-      .map((p, i) => `Bancale ${i+1}: ${p.weight}kg (€${p.price.toFixed(2)})`)
+    // Description: mostra solo fasce peso e ritiro
+    const details = breakdownWeights
+      .map((w, i) => `Bancale ${i+1}: fino a ${w}kg`)
       .join(", ");
-    const description = `${details}, pickup €${PICKUP_FEE.toFixed(2)}`;
+    const description = `${details}, ritiro €${PICKUP_FEE.toFixed(2)}`;
 
     const shippingRate = {
-      service_name: "Spedizione Personalizzata",
+      service_name: "Corriere One Express",
       service_code: "CUSTOM",
       total_price: totalPriceCents.toString(),
       currency: "EUR",
@@ -113,7 +112,7 @@ export async function POST(req: NextRequest) {
     };
 
     if (debug) {
-      return NextResponse.json({ rates: [shippingRate], debug: { prov, pesoTotaleKg, bancali, breakdown, baseCost, fuel, pickup: PICKUP_FEE, iva, totalPriceCents } });
+      return NextResponse.json({ rates: [shippingRate], debug: { prov, pesoTotaleKg, bancali, breakdownWeights, baseCost, fuel, pickup: PICKUP_FEE, iva, totalPriceCents } });
     }
 
     return NextResponse.json({ rates: [shippingRate] });
