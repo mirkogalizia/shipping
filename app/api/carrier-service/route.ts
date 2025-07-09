@@ -24,7 +24,7 @@ const provinceMap: Record<string, string> = {
   RA: "RAVENNA", RC: "REGGIO CALABRIA", RE: "REGGIO EMILIA", RG: "RAGUSA",
   RI: "RIETI", RM: "ROMA", RN: "RIMINI", RO: "ROVIGO", SA: "SALERNO",
   SI: "SIENA", SO: "SONDRIO", SP: "LA SPEZIA", SR: "SIRACUSA", SS: "SASSARI",
-  SV: "ALESSANDRIA", TA: "TARANTO", TE: "TERAMO", TN: "TRENTO", TO: "TORINO",
+  SV: "VERCELLI", TA: "TARANTO", TE: "TERAMO", TN: "TRENTO", TO: "TORINO",
   TP: "TRAPANI", TR: "TERNI", TS: "TRIESTE", TV: "TREVISO", UD: "UDINE",
   VA: "VARESE", VB: "VERBANIA", VC: "VERCELLI", VE: "VENEZIA", VI: "VICENZA",
   VR: "VERONA", VT: "VITERBO"
@@ -32,6 +32,8 @@ const provinceMap: Record<string, string> = {
 
 const VAT_RATE = 0.22;
 const FUEL_SURCHARGE_RATE = 0.025;
+// costo fisso di ritiro
+const PICKUP_FEE = 3;
 const DEFAULT_GRAMS = 1000;
 
 export async function POST(req: NextRequest) {
@@ -51,23 +53,27 @@ export async function POST(req: NextRequest) {
 
     // 4) Provincia
     const rawProv = (rate.destination?.province || "").toString().trim();
-    if (!rawProv) return NextResponse.json({ error: "Provincia non valida" }, { status: 400 });
+    if (!rawProv)
+      return NextResponse.json({ error: "Provincia non valida" }, { status: 400 });
     const key = rawProv.toUpperCase();
     const prov = provinceMap[key] || rawProv.toUpperCase();
 
-    // 5) Peso totale (in kg)
+    // 5) Peso totale (kg)
     const items = (rate.line_items || rate.items || []) as any[];
     const pesoTotaleKg =
       items
-        .map((li: any) => ({
+        .map(li => ({
           ...li,
           grams: li.grams && li.grams > 0 ? li.grams : DEFAULT_GRAMS
         }))
-        .reduce((sum: number, i) => sum + Number(i.grams) * (i.quantity || 1), 0) / 1000;
-    if (pesoTotaleKg <= 0) return NextResponse.json({ error: "Peso non valido" }, { status: 400 });
+        .reduce((sum, i) => sum + Number(i.grams) * (i.quantity || 1), 0) / 1000;
+    if (pesoTotaleKg <= 0)
+      return NextResponse.json({ error: "Peso non valido" }, { status: 400 });
 
     // 6) Filtra tariffe per provincia
-    const list = tariffs.filter(t => t.Provincia.toUpperCase() === prov).sort((a, b) => a.Peso - b.Peso);
+    const list = tariffs
+      .filter(t => t.Provincia.toUpperCase() === prov)
+      .sort((a, b) => a.Peso - b.Peso);
     if (list.length === 0) {
       return NextResponse.json(
         { error: `Provincia "${rawProv}" (${prov}) non trovata.` },
@@ -75,13 +81,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 7) Calcolo bancali con scarto +10%
-    const MAX_PER_PALLET = 1000;
-    const pesoConScarto = pesoTotaleKg * 1.1;
+    // 7) Calcolo bancali con max 1200kg
+    const MAX_PER_PALLET = 1200;
     const bracketWeights = list.map(t => t.Peso).filter(w => w <= MAX_PER_PALLET);
     const bracketPrices = list.filter(t => t.Peso <= MAX_PER_PALLET).map(t => t.Prezzo);
 
-    let rem = pesoConScarto;
+    let rem = pesoTotaleKg;
     let baseCost = 0;
     let bancali = 0;
 
@@ -94,25 +99,25 @@ export async function POST(req: NextRequest) {
       rem -= palletWeight;
     }
 
-    // 8) Carburante + IVA
+    // 8) Supplemento carburante + ritiro + IVA
     const fuel = baseCost * FUEL_SURCHARGE_RATE;
-    const subtotal = baseCost + fuel;
-    const iva = subtotal * VAT_RATE;
-    const totalPriceCents = Math.round((subtotal + iva) * 100);
+    const subtotalExclVat = baseCost + fuel + PICKUP_FEE;
+    const iva = subtotalExclVat * VAT_RATE;
+    const totalPriceCents = Math.round((subtotalExclVat + iva) * 100);
 
-    // 9) Risposta
+    // 9) Prepara risposta
     const shippingRate = {
       service_name: "Spedizione Personalizzata",
       service_code: "CUSTOM",
       total_price: totalPriceCents.toString(),
       currency: "EUR",
-      description: `Bancali: ${bancali}, fascia fino a ${bracketWeights[bracketWeights.length-1]}kg`
+      description: `Bancali: ${bancali}, fascia fino a ${bracketWeights[bracketWeights.length-1]} kg, + ritiro €${PICKUP_FEE}`
     };
 
     if (debug) {
       return NextResponse.json({
         rates: [shippingRate],
-        debug: { rawProv, prov, pesoTotaleKg, pesoConScarto, bancali, baseCost, fuel, subtotal, iva, totalPriceCents }
+        debug: { rawProv, prov, pesoTotaleKg, bancali, baseCost, fuel, pickup: PICKUP_FEE, iva, totalPriceCents }
       });
     }
 
