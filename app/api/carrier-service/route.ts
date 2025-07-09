@@ -97,18 +97,17 @@ export async function POST(req: NextRequest) {
     const iva = subtotalExclVat * VAT_RATE;
     const totalPriceCents = Math.round((subtotalExclVat + iva) * 100);
 
-    // Description: mostra solo fasce peso e ritiro
+    // Description: mostra solo fasce peso
     const details = breakdownWeights
       .map((w, i) => `Bancale ${i+1}: fino a ${w}kg`)
       .join(", ");
-    const description = `${details}, ritiro €${PICKUP_FEE.toFixed(2)}`;
 
     const shippingRate = {
       service_name: "Corriere One Express",
       service_code: "CUSTOM",
       total_price: totalPriceCents.toString(),
       currency: "EUR",
-      description
+      description: details
     };
 
     if (debug) {
